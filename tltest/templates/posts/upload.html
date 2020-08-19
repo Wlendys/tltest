@@ -1,0 +1,59 @@
+{% extends 'main.html' %}
+
+{% block title %}Загрузка данных{% endblock %}
+
+{% block content %}
+
+    <div class="col-sm-6 col-lg-4">
+        {% if status.users == 'Загружены новые пользователи: ' %}
+            {% if add_users|length > 0 %}
+                <div class="panel panel-success">
+                    <div class="panel-heading">
+                        {{ status.users }} {{ add_users|length }}
+                    </div>
+                    <div class="panel-body">
+                        <ol>
+                            {% for user in add_users %}
+                                <li>{{ user.username }}</li>
+                            {% endfor %}
+                        </ol>
+                    </div>
+                </div>
+            {% else %}
+                <div class="alert alert-success" role="alert">
+                    Обновление пользователей не требуется
+                </div>
+            {% endif %}
+        {% else %}
+            <div class="alert alert-danger" role="alert">
+                {{ status.users }}
+            </div>
+        {% endif %}
+    </div>
+    <div class="col-sm-6 col-lg-8">
+        {% if status.posts == 'Загружены новые посты: ' %}
+            {% if add_posts|length > 0 %}
+                <div class="panel panel-success">
+                    <div class="panel-heading">
+                        {{ status.posts }} {{ add_posts|length }}
+                    </div>
+                    <div class="panel-body">
+                        <ol>
+                            {% for post in add_posts %}
+                                <li>{{ post.title }}</li>
+                            {% endfor %}
+                        </ol>
+                    </div>
+                </div>
+            {% else %}
+                <div class="alert alert-success" role="alert">
+                    Обновление постов не требуется
+                </div>
+            {% endif %}
+        {% else %}
+            <div class="alert alert-danger" role="alert">
+                {{ status.posts }}
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}

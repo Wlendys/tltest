@@ -1,0 +1,33 @@
+{% extends 'main.html' %}
+
+{% block title %}Посты{% endblock %}
+
+{% block content %}
+
+    <div class="col-sm-12">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <h1>Список постов</h1>
+                {% if posts_list %}
+                    <table class="table table-striped">
+                        <tr>
+                            <th>Имя пользователя</th>
+                            <th>Тема поста</th>
+                            <th>Текст поста</th>
+                        </tr>
+                        {% for post in posts_list %}
+                            <tr>
+                                <td>{{ post.user }}</td>
+                                <td>{{ post.title }}</td>
+                                <td>{{ post.body }}</td>
+                            </tr>
+                        {% endfor %}
+                    </table>
+                {% else %}
+                    <p>посты не найдены</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

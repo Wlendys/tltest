@@ -1,0 +1,49 @@
+body {
+    background-color: #f7f7f8;
+}
+
+@media (min-width: 1000px) {
+    body {
+        font-size: 16px;
+    }
+}
+
+h1 {
+    font-size: 24px;
+    margin: 10px 0 15px 0;
+}
+
+.navbar {
+    font-weight: bold;
+    border-radius: 0;
+}
+
+.navbar, .table {
+    margin-top: 20px;
+}
+
+.panel {
+    border-radius: 0;
+}
+
+.panel-heading {
+    padding: 15px;
+    border-radius: 0;
+}
+
+.panel-success > .panel-heading {
+    background-color: #29af7d;
+    color: #fdfdfe;
+}
+
+.alert-danger {
+    background-color: #fd6d41;
+    color: #fdfdfe;
+    border-radius: 0;
+}
+
+.alert-success {
+    background-color: #29af7d;
+    color: #fdfdfe;
+    border-radius: 0;
+}
